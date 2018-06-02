@@ -37,4 +37,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'api_token',
     ];
+
+    /**
+     * Gets all current user's shortlisted posts.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function shortlistPosts()
+    {
+        return $this->belongsToMany(Post::class, 'shortlists', 'user_id', 'post_id');
+    }
 }

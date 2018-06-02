@@ -59,4 +59,14 @@ class Post extends Model
             $post->created_at = $post->freshTimestamp();
         });
     }
+
+    /**
+     * Get all users who shortlists the current post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function beenShortlistedBy()
+    {
+        return $this->belongsToMany(User::class, 'shortlists', 'post_id', 'user_id');
+    }
 }
