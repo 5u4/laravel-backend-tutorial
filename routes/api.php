@@ -18,6 +18,7 @@ Route::group(['prefix' => 'v1'], function () {
     /* auth */
     Route::group(['prefix' => 'auth'], function () {
         Route::post('register', 'AuthController@register');
+        Route::post('login', 'AuthController@login');
     });
 
     /* posts */
