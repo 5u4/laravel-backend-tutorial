@@ -24,6 +24,7 @@ Route::group(['prefix' => 'v1'], function () {
     /* users */
     Route::group(['prefix' => 'users', 'middleware' => 'auth:api'], function () {
         Route::post('shortlist/{postId}', 'UserController@shortlist');
+        Route::delete('shortlist/{postId}', 'UserController@unshortlist');
     });
 
     /* posts */

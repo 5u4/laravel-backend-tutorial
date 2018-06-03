@@ -21,4 +21,19 @@ class UserController extends Controller
         /* response */
         return response()->json();
     }
+
+    /**
+     * Remove post in user's shortlist.
+     *
+     * @param int $postId
+     * @return JsonResponse
+     */
+    public function unshortlist(int $postId): JsonResponse
+    {
+        /* remove post in user's shortlist */
+        Auth::user()->shortlistPosts()->detach($postId);
+
+        /* response */
+        return response()->json();
+    }
 }
