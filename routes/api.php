@@ -15,6 +15,11 @@ use Illuminate\Http\Request;
 
 /* version 1 */
 Route::group(['prefix' => 'v1'], function () {
+    /* auth */
+    Route::group(['prefix' => 'auth'], function () {
+        Route::post('register', 'AuthController@register');
+    });
+
     /* posts */
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', 'PostController@index');
