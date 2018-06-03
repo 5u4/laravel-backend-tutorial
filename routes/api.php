@@ -31,5 +31,6 @@ Route::group(['prefix' => 'v1'], function () {
     /* posts */
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', 'PostController@index');
+        Route::post('/', 'PostController@create');
     });
 });
