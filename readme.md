@@ -11,3 +11,5 @@
 [4. post controller](tutorials/4.%20post%20controller.md)
 
 [5. authentication](tutorials/5.%20authentication.md)
+
+[6. user controller](tutorials/6.%20user%20controller.md)
