@@ -21,6 +21,11 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('login', 'AuthController@login');
     });
 
+    /* users */
+    Route::group(['prefix' => 'users', 'middleware' => 'auth:api'], function () {
+        Route::post('shortlist/{postId}', 'UserController@shortlist');
+    });
+
     /* posts */
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', 'PostController@index');
