@@ -4,9 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Post as PostResource;
 
 class UserController extends Controller
 {
+    /**
+     * Get all user's shortlisted posts
+     *
+     * @return JsonResponse
+     */
+    public function shortlistIndex(): JsonResponse
+    {
+        return PostResource::collection(
+            Auth::user()->shortlistPosts()
+                ->orderByDesc('shortlists.created_at')
+                ->get()
+        )->response();
+    }
+
     /**
      * Add a post to user's shortlist.
      *
