@@ -20,6 +20,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /* the api token length */
+    public const API_TOKEN_LENGTH = 120;
+
     /**
      * The attributes that are mass assignable.
      *
