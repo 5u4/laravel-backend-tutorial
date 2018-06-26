@@ -13,3 +13,5 @@
 [5. authentication](tutorials/5.%20authentication.md)
 
 [6. user controller](tutorials/6.%20user%20controller.md)
+
+[7. deployment](https://github.com/senhungwong/laravel-heroku-deployment-tutorial)
